@@ -1,10 +1,10 @@
 package json
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"io"
-	"log"
 	"math/bits"
 	"strconv"
 	"strings"
@@ -23,6 +23,10 @@ func DeserializeFromReader(r io.Reader, v serde.Deserializable) error {
 
 func DeserializeFromString(s string, v serde.Deserializable) error {
 	return DeserializeFromReader(strings.NewReader(s), v)
+}
+
+func DeserializeFromBytes(s []byte, v serde.Deserializable) error {
+	return DeserializeFromReader(bytes.NewReader(s), v)
 }
 
 type stack []bool
@@ -292,7 +296,6 @@ func (d *De) DeserializeAny(v serde.Visitor) (err error) {
 		return
 	}
 
-	log.Printf("de any %s", string(tok))
 	switch tok[0] {
 	case '{':
 		return d.DeserializeMap(v)
@@ -436,7 +439,6 @@ func (d *De) DeserializeString(v serde.Visitor) (err error) {
 	if err != nil {
 		return err
 	}
-	log.Printf("de string %s", string(tok))
 	return v.VisitString(string(tok[1 : len(tok)-1]))
 }
 

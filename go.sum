@@ -1,0 +1,4 @@
+github.com/Xuanwo/go-bufferpool v0.0.0-20201021043920-c47fbe3590fd h1:EIrWkEnnAqSt85K7+9HDCFRsGJr06YSf7A0W1D/6xpg=
+github.com/Xuanwo/go-bufferpool v0.0.0-20201021043920-c47fbe3590fd/go.mod h1:Mle++9GGouhOwGj52i9PJLNAPmW2nb8PWBP7JJzNCzk=
+github.com/Xuanwo/serde-go v0.0.0-20201020053156-0896e87c4b45 h1:T9r40xGRtSLl1Zbp4exdCFrG/6QAy7Of1tFZt/EKwFA=
+github.com/Xuanwo/serde-go v0.0.0-20201020053156-0896e87c4b45/go.mod h1:2Bol69TjfjUmT+lTH41EDWhfBmZDIWhqIbn164+Aa7o=
